@@ -6,8 +6,9 @@ export default function Register() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [universityOrWork, setUniversityOrWork] = useState('');
-  const [age, setAge] = useState('');
+  const [dateOfBirth, setDateOfBirth] = useState('');
   const [gender, setGender] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleRegister = () => {
     // Handle the registration logic here...
@@ -43,12 +44,11 @@ export default function Register() {
         placeholder="Enter your university or work"
       />
 
-      <Text>Age:</Text>
+      <Text>Date of Birth:</Text>
       <TextInput
-        value={age}
-        onChangeText={(text) => setAge(text)}
-        placeholder="Enter your age"
-        keyboardType="numeric"
+        value={dateOfBirth}
+        onChangeText={(text) => setDateOfBirth(text)}
+        placeholder="Enter your date of birth (dd/mm/yyyy)"
       />
 
       <Text>Gender:</Text>
@@ -60,6 +60,14 @@ export default function Register() {
         <Picker.Item label="Female" value="female" />
         <Picker.Item label="Other" value="other" />
       </Picker>
+
+      <Text>Password:</Text>
+      <TextInput
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+        placeholder="Enter your password"
+        secureTextEntry
+      />
 
       <Button title="Register" onPress={handleRegister} />
     </View>
